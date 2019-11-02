@@ -6,17 +6,28 @@ const path = require('path'),
 
 module.exports = {
   mode: 'development',
-  entry: {
-    app: ['./src/app/App.tsx', 'webpack-hot-middleware/client'],
-    vendor: ['react', 'react-dom']
-  },
+  entry: './src/app/App.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].bundle.js'
   },
-  devtool: 'source-map',
+  devtool: process.env.NODE_ENV === 'development' ? 'source-map' : false,
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx']
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 4000,
+    historyApiFallback: true,
+    hot: true,
+    overlay: {
+        warnings: true,
+        errors: true
+    },
+    proxy: {
+        '/api': 'http://localhost:5000'
+    }
   },
   module: {
     rules: [

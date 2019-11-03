@@ -16,6 +16,15 @@ const Home = () => {
     setVideoSrc(window.URL.createObjectURL(file))
   }
 
+  const getFileDetails = (event: React.ChangeEvent<HTMLInputElement>) => {
+    //@ts-ignore
+    if (window.File && window.FileReader && window.FileList && window.Blob) {
+      let reader = new FileReader()
+      const file = event.target.files[0]
+      setVideoSrc(window.URL.createObjectURL(file))
+    }
+  }
+
   return (
     <div>
       <Page title="Home" />
@@ -28,6 +37,9 @@ const Home = () => {
       </button>
       {
         videoSrc && <video src={videoSrc} controls autoPlay/>
+      }
+      {
+        !videoSrc && <input type="file" onChange={getFileDetails}/>
       }
     </div>
   )

@@ -88,6 +88,7 @@ module.exports = {
       short_name: 'testPWA',
       description: 'My awesome Progressive Web App!',
       background_color: '#ffffff',
+      display: "fullscreen",
       icons: [
         {
           src: path.resolve('src/app/assets/icon.png'),

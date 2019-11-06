@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.firebaseapp.twademoi",
+    "sha256_cert_fingerprints":
+    ["71:ED:79:5C:68:60:78:23:48:54:A3:24:5D:B2:EC:B3:13:EC:3A:60:AD:11:E3:EF:26:13:AB:DF:6E:D6:90:CE"]
+  }
+}]

@@ -27,7 +27,7 @@ const Home = () => {
 
   return (
     <div>
-      <Page title="Home" />
+      <Page title="MY" />
       <img src={homeLogo} style={{width: '200px'}}/>
       <button
         style={{padding: '9px 16px', display:'block', backgroundColor: '#abc123'}}
